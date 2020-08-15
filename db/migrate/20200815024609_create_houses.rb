@@ -1,7 +1,9 @@
 class CreateHouses < ActiveRecord::Migration[5.2]
   def change
     create_table :houses do |t|
-
+      t.string :name
+      t.integer :listing_price
+      
       t.timestamps
     end
   end
