@@ -1,5 +1,5 @@
-<%= form_for @user do |f| %>
-     Email:
+<%= form_for @user, :url => login_path  do |f| %> 
+    Email:
     <%= f.text_field :email %>
     Password:
     <%= f.password_field :password %> 

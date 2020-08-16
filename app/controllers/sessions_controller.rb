@@ -11,8 +11,11 @@ class SessionsController < ApplicationController
             sessions[:user_id] = @user.user_id
             redirect_to user_path(@user) #show page
         else 
-           render :new
+           redirect_to login_path
         end  
+
+       # def logout
+       # end 
 
     end 
 end
