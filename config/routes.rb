@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root :home to: 'application#home'
+  root to: 'application#home'
 
   resources :appointments
   resources :houses
