@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
 
-  root to: 'application#home'
+  root :home to: 'application#home'
 
   resources :appointments
   resources :houses
-  resources :users
+  resources :users, except: [:new]
   
   #signing up
   get '/signup', to: 'users#new'
