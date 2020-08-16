@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  root to: 'application#home'
+
   resources :appointments
   resources :houses
   resources :users
