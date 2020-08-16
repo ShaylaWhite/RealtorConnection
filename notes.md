@@ -44,3 +44,30 @@ belongs_to :users
 - user_id :integer
 - house_id :integer
 - status :string
+
+#scope methods
+
+lives in your model and a class method
+responsible for returning a set of data based on what that method goal is. 
+
+Writing Scope Methods
+-syntax
+
+scope :method_name,  -> { activerecord_method(column: "value')} 
+
+
+all houses with a status of still on the market
+
+scope :status,  -> where(status: 'sold'})
+
+whereever you would like to render the data use:
+
+Class.scope_method_name
+
+-@house_status = @Appointment.status
+
+#activerecord query methods
+- where
+- find
+- order
+-all
