@@ -4,6 +4,4 @@ class User < ApplicationRecord
     has_many :houses, through: :appointments
 
     validates :email, presence: true, uniqueness: true 
-        
-
 end
