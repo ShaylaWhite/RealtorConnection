@@ -4,15 +4,15 @@ Rails.application.routes.draw do
 
   resources :appointments
   resources :houses
-  resources :users, except: [:new]
+  resources :users
   
   #signing up
-  get '/signup', to: 'users#new'
+  get '/signup' => 'users#new'
 
   #logging in
-  get '/login', to: 'sessions#new'
-  post '/login', to: 'sessions#create'
-  delete '/logout', to: 'sessions#destroy'
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  delete '/logout' => 'sessions#destroy'
 
  
 end
