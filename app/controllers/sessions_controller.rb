@@ -1,4 +1,6 @@
 class SessionsController < ApplicationController
+    
+
 
     def new
         @user = User.new 
@@ -16,6 +18,9 @@ class SessionsController < ApplicationController
 
        # def logout
        # end 
+ 
+    def home
 
+    end 
     end 
 end

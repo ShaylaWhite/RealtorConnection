@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root to: 'application#home'
+  root to: 'sessions#home'
 
   resources :appointments
   resources :houses
@@ -10,7 +10,6 @@ Rails.application.routes.draw do
   get '/signup', to: 'users#new'
 
   #logging in
-
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'

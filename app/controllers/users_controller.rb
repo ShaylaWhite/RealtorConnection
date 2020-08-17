@@ -1,9 +1,12 @@
 class UsersController < ApplicationController
 #responsible for creating our user object and signing up 
 
-    def new
-    end 
 
+   #renders the sign-up form
+   def new
+   end 
+   
+    #sign-up users
     def create
     end 
     
