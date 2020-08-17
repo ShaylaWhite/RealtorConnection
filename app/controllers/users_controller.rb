@@ -4,8 +4,9 @@ class UsersController < ApplicationController
 
    #renders the sign-up form
    def new
+    @user = User.new
    end 
-   
+
     #sign-up users
     def create
     end 
