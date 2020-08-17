@@ -1,0 +1,17 @@
+
+<h1>Thank You For Choosing Realtor Connection</h1>
+<h1>Please Schedule A Appointment</h1>
+
+<%= form_for(@appointment) do |f| %> 
+
+    <%= f.label :time %>
+    <%= f.time_field :time %>
+    <br>
+    <%= f.label :status %>
+    <%= f.text_field :status%> 
+    <br>
+    <%= f.label :buyername %>
+    <%= f.text_field :buyername %>
+    <br>
+    <%= f.submit "Schedule Appointment" %>
+<% end %>

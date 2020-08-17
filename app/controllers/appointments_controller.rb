@@ -5,8 +5,8 @@ class AppointmentsController < ApplicationController
 
 
     def create
-        @appointment = Appointment.new(appointment_params(:time, :status, :buyer_name))
-    current_user.
+        @appointment = current_user.appointments.build(appointment_params)
+    
         if @appointment.save
             redirect_to appointment_path(appointment)
         else
