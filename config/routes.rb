@@ -15,6 +15,11 @@ Rails.application.routes.draw do
 
  
   resources :appointments
-  resources :houses
-  resources :users
+  resources :users do 
+    resources :houses, only: [:new, :create, :index ]
+  end
+
+  resources :houses do
+    resources :appointments, only: [:new, :create,:index ]
+  end 
 end
