@@ -7,11 +7,19 @@
     <%= f.label :time %>
     <%= f.time_field :time %>
     <br>
+
     <%= f.label :status %>
-    <%= f.text_field :status%> 
+    <%= f.select(:status, ["Sold", "Hold", "Market"]) %> 
     <br>
+
     <%= f.label :buyername %>
-    <%= f.text_field :buyername %>
+    <%= f.text_field :buyer_name %>
     <br>
+
+    <%= f.label :house, "Select A House" %>
+    <%= f.collection_select :house_id, House.all, :id, :name %>
+     
+    <br><br>
+
     <%= f.submit "Schedule Appointment" %>
 <% end %>

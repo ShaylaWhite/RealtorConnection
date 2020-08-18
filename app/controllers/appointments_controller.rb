@@ -1,8 +1,8 @@
 class AppointmentsController < ApplicationController
 
     def new
-    @appointment = Appointment.ew
-
+      @appointment = Appointment.new
+    end 
 
     def create
         @appointment = current_user.appointments.build(appointment_params)
@@ -12,6 +12,15 @@ class AppointmentsController < ApplicationController
         else
             render :new
         end
+    end 
+
+    def index
+        if params[:time]
+            @appointments = Appointment.search_by_time(params[:time]).order_by_time
+            @appointments = Appointment.order_by_time if @appointments == []
+        else
+            @appointments = Appointment.order_by_time
+        end 
     end 
 
     def show
@@ -48,7 +57,7 @@ private
     end 
 
     def appointment_params
-        params.require(:appointment).permit(:time, :status, :buyer_name)
+        params.require(:appointment).permit(:time, :status, :buyer_name, :house_id, house_attributes: [:name, :listing_price])
 
     end
 end 

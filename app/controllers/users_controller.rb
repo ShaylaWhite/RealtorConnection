@@ -12,18 +12,16 @@ class UsersController < ApplicationController
         @user = User.new(user_params)
         if @user.save #okay to save then login user w/ sessions
             session[:user_id] = @user.id
-            redirect_to user_path(@user) #show page
+            redirect_to user_path #show page
         else 
            render :new
         end  
     end 
 
     def show
+        @user = User.find_by_id(params[:id])
+        redirect_to '/' if !@user #protects 
     end 
-
-    def delete
-    end 
-
 
 private
     
